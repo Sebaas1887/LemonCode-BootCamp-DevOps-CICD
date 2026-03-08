@@ -1,11 +1,11 @@
 name: ci
 
 on:
-  push:
-    branches: [ main ]
+  # push:
+  #   branches: [ main ]
 #    paths: [ 'hangman-api/**' ]
-  pull_request:
-    branches: [ main ]
+  # pull_request:
+  #   branches: [ main ]
 #    paths: [ 'hangman-api/**' ]
 
 jobs:
