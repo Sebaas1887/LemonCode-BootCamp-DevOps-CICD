@@ -2,6 +2,11 @@ name: ejercicio2
 
 on:
   workflow_dispatch:
+    inputs:
+      tag:
+        description: "Tag Docker Image"
+        required: true
+        default: "latest"
 
 jobs:
   build:
@@ -28,4 +33,4 @@ jobs:
           context: ./hangman-front
           file: ./hangman-front/Dockerfile
           push: true
-          tags: ghcr.io/${{ vars.USER }}/hangman-front:v1
+          tags: ghcr.io/${{ vars.USER }}/hangman-front:${{ github.event.inputs.tag }}
