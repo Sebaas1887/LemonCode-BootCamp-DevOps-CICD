@@ -28,4 +28,4 @@ jobs:
           context: ./hangman-front
           file: ./hangman-front/Dockerfile
           push: true
-          tags: ghcr.io/sebastianlemon/hangman-front:v1
+          tags: ghcr.io/${{ vars.USER }}/hangman-front:v1
