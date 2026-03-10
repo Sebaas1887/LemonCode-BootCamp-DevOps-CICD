@@ -1,0 +1,42 @@
+name: ejercicio3
+
+on:
+  workflow_dispatch:
+
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Create docker network
+        run: docker network create hangman-net
+
+      - name: Build API image
+        run: docker build -t hangman-api:local ./hangman-api
+
+      - name: Build Front image
+        run: docker build -t hangman-front:local ./hangman-front
+
+      - name: Start API
+        run: docker run -d --name hangman-api --network hangman-net -p 3001:3000 hangman-api:local
+
+      - name: Start Front
+        run: docker run -d --name hangman-front --network hangman-net -p 8080:8080 -e API_URL=http://hangman-api:3000 hangman-front:local
+
+      - name: Show running containers
+        run: docker ps
+
+      - name: Install e2e dependencies
+        working-directory: hangman-e2e/e2e
+        run: npm ci
+
+      - name: Run Cypress tests
+        uses: cypress-io/github-action@v6
+        with:
+          working-directory: hangman-e2e/e2e
+          install: false
+          wait-on: 'http://localhost:8080'
+          wait-on-timeout: 120
