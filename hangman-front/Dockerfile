@@ -29,3 +29,5 @@ COPY ./entry-point.sh /
 RUN chmod +x /entry-point.sh
 ENTRYPOINT [ "sh", "/entry-point.sh" ] 
 CMD [ "nginx", "-g", "daemon off;" ]
+
+###test ejercicio1###
