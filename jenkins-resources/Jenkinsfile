@@ -1,0 +1,34 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+                // git branch: 'main', url: 'https://github.com/Sebaas1887/LemonCode-BootCamp-DevOps-CICD/tree/main/jenkins-resources/calculator'
+            }
+        }
+
+        stage('Compile') {
+            steps {
+                dir('jenkins-resources/calculator') {
+                    sh 'chmod +x ./gradlew'
+                    sh './gradlew compileJava'
+                }
+            }
+        }
+
+        stage('Unit Tests') {
+            steps {
+                dir('jenkins-resources/calculator') {
+                    sh 'chmod +x ./gradlew'
+                    sh './gradlew test'
+                }
+            }
+}
+    post {
+        always {
+            junit 'build/test-results/test/*.xml'
+        }
+    }
+}
