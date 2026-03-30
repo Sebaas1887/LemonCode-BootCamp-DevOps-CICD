@@ -1,8 +1,20 @@
 --Ejercicio 1 Jenkins--
 
+Creo un Pipeline de la UI de Jenkins apuntando a mi Jenkinsfile dentro de Calculator:
 
+![jens01-01](./capturas/jenkins01.png)
+
+![jens01-02](./capturas/jenkins02.png)
+
+Compilado correcto:
+
+![jens01-03](./capturas/jenkins03.png)
+
+![jens01-04](./capturas/jenkins04.png)
 
 --Ejercicio 2 Jenkins--
+
+
 
 --Ejercicio 1 Github--
 
