@@ -14,7 +14,13 @@ Compilado correcto:
 
 --Ejercicio 2 Jenkins--
 
+Creo otro Pipeline desde la UI de Jenkins apuntando a mi nuevo Jenkinsfile: Jenkinsfile.2, misma ubicacion que el anterior:
 
+![jens02-01](./capturas/jenkins05.png)
+
+Compilado Correcto:
+
+![jens02-02](./capturas/jenkins06.png)
 
 --Ejercicio 1 Github--
 
@@ -65,3 +71,9 @@ Imagenes buildeadas:
 Tests e2d:
 
 ![ejercicio03-01](./capturas/ejercicio03-01.png)
+
+--RUTAS ARCHIVOS-
+
+LemonCode\LemonCode-BootCamp-DevOps-CICD\.github\workflows
+LemonCode\LemonCode-BootCamp-DevOps-CICD\jenkins-resources\calculator --> Jenkinsfile
+LemonCode\LemonCode-BootCamp-DevOps-CICD\jenkins-resources\calculator --> Jenkinsfile.2
