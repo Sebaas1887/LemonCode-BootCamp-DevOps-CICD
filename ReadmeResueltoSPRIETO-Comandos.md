@@ -10,8 +10,6 @@ Compilado correcto:
 
 ![jens01-03](./capturas/jenkins03.png)
 
-![jens01-04](./capturas/jenkins04.png)
-
 --Ejercicio 2 Jenkins--
 
 Creo otro Pipeline desde la UI de Jenkins apuntando a mi nuevo Jenkinsfile: Jenkinsfile.2, misma ubicacion que el anterior:
