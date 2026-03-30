@@ -1,4 +1,10 @@
---Ejercicio 1--
+--Ejercicio 1 Jenkins--
+
+
+
+--Ejercicio 2 Jenkins--
+
+--Ejercicio 1 Github--
 
 Creo una branch nueva para el trigger:
 
@@ -24,7 +30,7 @@ Test falla pero por el codigo:
 
 ![ejercicio01-06](./capturas/ejercicio01-06.png)
 
---Ejercicio 2--
+--Ejercicio 2 Github--
 
 Creo una variable con mi usuario de GH y un access token que guardo como secret:
 
@@ -42,7 +48,7 @@ Imagenes buildeadas:
 
 ![ejercicio02-04](./capturas/ejercicio02-04.png)
 
---Ejercicio 3--
+--Ejercicio 3 Github--
 
 Tests e2d:
 

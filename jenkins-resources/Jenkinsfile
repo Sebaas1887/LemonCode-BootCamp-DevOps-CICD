@@ -5,7 +5,6 @@ pipeline {
         stage('Checkout') {
             steps {
                 checkout scm
-                // git branch: 'main', url: 'https://github.com/Sebaas1887/LemonCode-BootCamp-DevOps-CICD/tree/main/jenkins-resources/calculator'
             }
         }
 
@@ -25,10 +24,12 @@ pipeline {
                     sh './gradlew test'
                 }
             }
-}
+        }
+    }
+
     post {
         always {
-            junit 'build/test-results/test/*.xml'
+            junit allowEmptyResults: true, testResults: 'jenkins-resources/calculator/build/test-results/test/*.xml'
         }
     }
 }
