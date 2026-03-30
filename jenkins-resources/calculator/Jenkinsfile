@@ -5,29 +5,31 @@ pipeline {
         stage('Checkout') {
             steps {
                 checkout scm
-                // Alternativa explícita:
-                // git branch: 'main', url: 'https://github.com/Sebaas1887/LemonCode-BootCamp-DevOps-CICD/tree/main/jenkins-resources'
             }
         }
 
         stage('Compile') {
             steps {
-                sh 'chmod +x ./gradlew'
-                sh './gradlew compileJava'
+                dir('jenkins-resources/calculator') {
+                    sh 'chmod +x ./gradlew'
+                    sh './gradlew compileJava'
+                }
             }
         }
 
         stage('Unit Tests') {
             steps {
-                sh 'chmod +x ./gradlew'
-                sh './gradlew test'
+                dir('jenkins-resources/calculator') {
+                    sh 'chmod +x ./gradlew'
+                    sh './gradlew test'
+                }
             }
         }
     }
 
     post {
         always {
-            junit 'build/test-results/test/*.xml'
+            junit allowEmptyResults: true, testResults: 'jenkins-resources/calculator/build/test-results/test/*.xml'
         }
     }
 }
